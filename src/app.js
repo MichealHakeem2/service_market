@@ -7,9 +7,18 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 require('./models/associations');
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
 app.use(cors({
-  origin: '*',
-  credentials: true
+  origin: (_origin, callback) => {
+    callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'ngrok-skip-browser-warning']
 }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
@@ -18,7 +27,7 @@ app.use('/api', apiRoutes);
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   swaggerOptions: {
     requestInterceptor: (req) => {
-      req.headers['ngrok-skip-browser-warning'] = '69420';
+      req.headers['ngrok-skip-browser-warning'] = 'true';
       return req;
     }
   }

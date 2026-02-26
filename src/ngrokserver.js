@@ -15,7 +15,7 @@ const startngrok = async () => {
     try {
         listener = await ngrok.connect({
             addr: parseInt(PORT),
-            domain: 'eeriest-asymptotically-sherie.ngrok-free.dev',
+            domain: 'subaqua-terminably-donella.ngrok-free.dev',
             authtoken: process.env.NGROK_AUTHTOKEN
         });
         console.log(`🌐 NGROK Server running on ${listener.url()}`);

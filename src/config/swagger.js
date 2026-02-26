@@ -9,7 +9,7 @@ const options = {
             description: 'Internal API documentation'
         },
         servers: [{
-            url: 'https://eeriest-asymptotically-sherie.ngrok-free.dev/api'
+            url: 'https://subaqua-terminably-donella.ngrok-free.dev/api'
         }],
         components: {
             securitySchemes: {
