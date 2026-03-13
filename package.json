@@ -1,19 +1,17 @@
 {
-    "name": "day1-api",
+    "name": "my-api",
     "version": "1.0.0",
     "description": "Day 1 API Project",
-    "main": "src/server.js",
+    "main": "passenger_app.js",
     "scripts": {
-        "start": "node src/server.js",
-        "dev": "nodemon src/server.js",
-        "ngrok": "nodemon src/ngrokserver.js"
+        "start": "node passenger_app.js",
+        "dev": "nodemon passenger_app.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@ngrok/ngrok": "^1.7.0",
-        "bcrypt": "^6.0.0",
+        "bcryptjs": "^2.4.3",
         "cors": "^2.8.6",
         "dotenv": "^16.6.1",
         "express": "^4.22.1",
@@ -21,11 +19,8 @@
         "jsonwebtoken": "^9.0.3",
         "morgan": "^1.10.1",
         "multer": "^2.0.2",
-        "mysql2": "^3.16.3",
-        "ngrok": "^5.0.0-beta.2",
-        "sequelize": "^6.37.7",
-        "swagger-jsdoc": "^6.2.8",
-        "swagger-ui-express": "^5.0.1"
+        "mysql2": "^3.18.2",
+        "sequelize": "^6.37.7"
     },
     "devDependencies": {
         "nodemon": "^3.1.11"
